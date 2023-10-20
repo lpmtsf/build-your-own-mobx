@@ -1,19 +1,11 @@
 import Delayed from '../utils/Delayed';
-import Component3 from './Component3';
 
-function Component2({
-  counter,
-  setCounter,
-}: {
-  counter: any;
-  setCounter: any;
-}) {
+function Component2() {
   return (
-    <Delayed triggerRerender={counter}>
+    <Delayed>
       <div className="Component">
         <h3>Component2</h3>
-        <p>{counter}</p>
-        <Component3 counter={counter} setCounter={setCounter} />
+        <p>NO COUNTER</p>
       </div>
     </Delayed>
   );

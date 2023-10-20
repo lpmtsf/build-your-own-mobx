@@ -1,22 +1,16 @@
 import Delayed from '../utils/Delayed';
-import Component2 from './Component2';
+import { counterStore } from '../utils/Store';
+import { observer } from 'mobx-react-lite';
 
-function Component1({
-  counter,
-  setCounter,
-}: {
-  counter: any;
-  setCounter: any;
-}) {
+function Component1() {
   return (
-    <Delayed triggerRerender={counter}>
+    <Delayed triggerRerender={counterStore.counter}>
       <div className="Component">
         <h3>Component1</h3>
-        <p>{counter}</p>
-        <Component2 counter={counter} setCounter={setCounter} />
+        <p>{counterStore.counter}</p>
       </div>
     </Delayed>
   );
 }
 
-export default Component1;
+export default observer(Component1);

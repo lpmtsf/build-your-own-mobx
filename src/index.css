@@ -15,12 +15,14 @@ code {
 .App {
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 80%;
   text-align: center;
 }
 
 h1 {
-  border: 1px dotted black;
+  border: 3px dotted black;
+  padding: 4px;
+  border-radius: 15px;
 }
 
 .Component {
@@ -36,4 +38,9 @@ h1 {
   to {
     background-color: white;
   }
+}
+
+.componentsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

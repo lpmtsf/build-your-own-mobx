@@ -1,22 +1,12 @@
 import Delayed from '../utils/Delayed';
+import { counterStore } from '../utils/Store';
 
-function Component4({
-  counter,
-  setCounter,
-}: {
-  counter: any;
-  setCounter: any;
-}) {
-  const decreaseCounter = () => {
-    setCounter(counter - 1);
-  };
-
+function Component4() {
   return (
-    <Delayed>
+    <Delayed triggerRerender={counterStore.counter}>
       <div className="Component">
         <h3>Component4</h3>
-        <p>{counter}</p>
-        <button onClick={decreaseCounter}>SUBTRACT</button>
+        <p>{counterStore.counter}</p>
       </div>
     </Delayed>
   );
