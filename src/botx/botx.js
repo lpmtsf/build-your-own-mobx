@@ -38,12 +38,7 @@ const observable = (obj) => {
   });
 };
 
-const autorun = (callBack) => {
-  let reaction = createReaction(callBack);
-  reaction.track(callBack);
-};
-
-const makeObservable = (BaseComponent) => {
+const observer = (BaseComponent) => {
   return () => {
     const forceUpdate = useForceUpdate();
     const reactionRef = useRef(null);
@@ -58,4 +53,4 @@ const makeObservable = (BaseComponent) => {
   };
 };
 
-export { autorun, observable, makeObservable };
+export { observable, observer };
