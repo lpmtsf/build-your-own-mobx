@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>BUILD YOUR OWN MOBX</h1>
+        <h1>BUILD YOUR OWN <s>MOBX</s> BOTX</h1>
       </header>
 
       <button onClick={() => counterStore.counter++}>ADD</button>
