@@ -5,15 +5,15 @@ const useForceUpdate = () => {
   return () => set((e) => !e);
 };
 
-let observableKeysByAction = [];
+let keysToObserve = [];
 let reactionsByKey = {};
 
 const createReaction = (onChange) => {
   return {
     track: (notifyObservers) => {
-      observableKeysByAction = [];
+      keysToObserve = [];
       notifyObservers();
-      observableKeysByAction.forEach((key) => {
+      keysToObserve.forEach((key) => {
         reactionsByKey[key] = reactionsByKey[key] || [];
         reactionsByKey[key].push(onChange);
       });
@@ -24,7 +24,7 @@ const createReaction = (onChange) => {
 const observable = (obj) => {
   return new Proxy(obj, {
     get: (target, key) => {
-      observableKeysByAction.push(key);
+      keysToObserve.push(key);
       return target[key];
     },
     set: (target, key, newValue) => {
@@ -42,9 +42,7 @@ const observer = (BaseComponent) => {
   return () => {
     const forceUpdate = useForceUpdate();
     const reactionRef = useRef(null);
-    if (!reactionRef.current) {
-      reactionRef.current = createReaction(forceUpdate);
-    }
+    reactionRef.current = createReaction(forceUpdate);
     let output;
     reactionRef.current.track(() => {
       output = BaseComponent();

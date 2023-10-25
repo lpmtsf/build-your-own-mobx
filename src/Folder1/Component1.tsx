@@ -1,15 +1,14 @@
-import Delayed from '../utils/Delayed';
 import { counterStore } from '../utils/Store';
-import { observer } from 'mobx-react-lite';
+import { observer } from '../botx/botx.js';
+import Component4 from './Component4';
 
 function Component1() {
   return (
-    <Delayed triggerRerender={counterStore.counter}>
-      <div className="Component">
-        <h3>Component1</h3>
-        <p>{counterStore.counter}</p>
-      </div>
-    </Delayed>
+    <div className="Component">
+      <h3>Component1</h3>
+      <p>{counterStore.counter}</p>
+      <Component4 />
+    </div>
   );
 }
 

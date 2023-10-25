@@ -14,7 +14,7 @@ const Delayed = ({ children, waitBeforeShow = 500, triggerRerender}: any) => {
     return () => clearTimeout(timer);
   }, [waitBeforeShow, triggerRerender]);
 
-  return isShown ? children : null;
+  return isShown ? children : <div><h2>Rendering...</h2></div>;
 };
 
 export default Delayed;
