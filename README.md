@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# Build your own MobX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Explore different approaches to state management in React and see how does MobX work under the hood.
 
-## Available Scripts
+Change branches to see the different example:
 
-In the project directory, you can run:
+## master
 
-### `npm start`
+No state management.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## option-1-useState
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Manage state using `useState` hook. 
 
-### `npm test`
+option-2-useContext
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Manage state using `useContext` hook. 
 
-### `npm run build`
+option-3-mobx
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A simple example of how to use Mobx.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+option-4-botx
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Same example as above, but this time we replace MobX with... BotX!
 
-### `npm run eject`
+option-4.1-botx-with-components
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+BotX in action with more complex structure.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Have fun!
